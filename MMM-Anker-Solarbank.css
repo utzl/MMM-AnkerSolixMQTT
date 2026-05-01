@@ -1,0 +1,62 @@
+.anker-container {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    width: 300px;
+}
+
+.anker-title {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.anker-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.anker-card {
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    text-align: center;
+}
+
+.label {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.value {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sub {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* Farben */
+
+.solar { border-left: 4px solid #FFD700; }
+.battery { border-left: 4px solid #00FF99; }
+.house { border-left: 4px solid #00BFFF; }
+.load { border-left: 4px solid #FF6347; }
+.grid { border-left: 4px solid #AAAAAA; }
+
+/* Balken */
+
+.bar {
+    margin-top: 5px;
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ffcc, #00ff66);
+}
