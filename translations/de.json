@@ -1,0 +1,14 @@
+{
+  "SOLAR":         "Solar",
+  "BATTERY":       "Batterie",
+  "HOME_LOAD":     "Hausverbrauch",
+  "FEED_IN":       "Einspeisung ins Haus",
+  "GRID":          "Netz",
+  "GRID_IMPORT":   "Bezug",
+  "GRID_EXPORT":   "Einspeisung",
+  "BAT_CHARGE":    "↑",
+  "BAT_DISCHARGE": "↓",
+  "LOADING":       "Lade Solardaten...",
+  "UPDATED":       "Aktualisiert",
+  "ERROR":         "Fehler"
+}

@@ -1,0 +1,14 @@
+{
+  "SOLAR":         "Solaire",
+  "BATTERY":       "Batterie",
+  "HOME_LOAD":     "Consommation",
+  "FEED_IN":       "Injection maison",
+  "GRID":          "Réseau",
+  "GRID_IMPORT":   "Soutirage",
+  "GRID_EXPORT":   "Injection",
+  "BAT_CHARGE":    "↑",
+  "BAT_DISCHARGE": "↓",
+  "LOADING":       "Chargement...",
+  "UPDATED":       "Mis à jour",
+  "ERROR":         "Erreur"
+}

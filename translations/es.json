@@ -1,0 +1,14 @@
+{
+  "SOLAR":         "Solar",
+  "BATTERY":       "Batería",
+  "HOME_LOAD":     "Consumo hogar",
+  "FEED_IN":       "Suministro hogar",
+  "GRID":          "Red",
+  "GRID_IMPORT":   "Importación",
+  "GRID_EXPORT":   "Exportación",
+  "BAT_CHARGE":    "↑",
+  "BAT_DISCHARGE": "↓",
+  "LOADING":       "Cargando datos...",
+  "UPDATED":       "Actualizado",
+  "ERROR":         "Error"
+}
