@@ -1,0 +1,30 @@
+{
+  "name": "mmm-ankersolixmqtt",
+  "version": "1.0.0",
+  "description": "MagicMirror² module for real-time Anker Solix Solarbank 3 data via MQTT",
+  "main": "MMM-AnkerSolixMQTT.js",
+  "scripts": {
+    "test": "echo \"No tests defined\" && exit 0"
+  },
+  "keywords": [
+    "magicmirror",
+    "magicmirror2",
+    "anker",
+    "solix",
+    "solarbank",
+    "solar",
+    "mqtt",
+    "energy",
+    "smarthome"
+  ],
+  "author": "utzl (https://github.com/utzl)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/utzl/MMM-AnkerSolixMQTT"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {}
+}
