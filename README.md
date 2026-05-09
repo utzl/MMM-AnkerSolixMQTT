@@ -58,9 +58,24 @@ git clone https://github.com/thomluther/anker-solix-api.git
 cd anker-solix-api
 ```
 
-### Step 2 — Install Python 3.12
+### Step 2 — Check Python version
 
-> Raspberry Pi OS Bullseye does not include Python 3.12 in its package manager. Build from source:
+```bash
+python3 --version
+```
+
+If the output shows **Python 3.12 or higher**, skip to Step 3.
+
+If the version is **below 3.12**, you need to install Python 3.12 manually. Raspberry Pi OS Bullseye does not include it in the package manager — try `apt` first, and if that fails, build from source:
+
+**Try apt first (works on Raspberry Pi OS Bookworm):**
+
+```bash
+sudo apt update
+sudo apt install python3.12 python3.12-venv python3.12-dev -y
+```
+
+**If apt fails (Raspberry Pi OS Bullseye), build from source (~15–20 minutes):**
 
 ```bash
 sudo apt install -y build-essential libssl-dev libffi-dev zlib1g-dev \
@@ -74,7 +89,11 @@ cd Python-3.12.9
 ./configure --enable-optimizations
 make -j$(nproc)
 sudo make altinstall
+```
 
+Verify the installation:
+
+```bash
 python3.12 --version
 ```
 
