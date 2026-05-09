@@ -17,6 +17,7 @@ A [MagicMirror²](https://magicmirror.builders/) module that displays real-time 
 - 💡 Current home consumption (W)
 - 🔌 Grid power: import (positive) or export (negative)
 - Compact 3×2 tile layout inspired by the Anker app
+- 🌍 Multi-language support (de, en, fr, nl, es)
 
 ---
 
@@ -297,3 +298,36 @@ The poller writes the following fields to the JSON file:
 ## License
 
 MIT
+
+---
+
+## Localization
+
+The module supports multiple languages and automatically uses the language configured in your MagicMirror `config.js`:
+
+```javascript
+// In ~/MagicMirror/config/config.js
+language: "de",  // de, en, fr, nl, es
+```
+
+The following languages are included:
+
+| Code | Language |
+|---|---|
+| `de` | Deutsch (German) |
+| `en` | English |
+| `fr` | Français (French) |
+| `nl` | Nederlands (Dutch) |
+| `es` | Español (Spanish) |
+
+Translation files are located in the `translations/` folder. To add a new language, create a new file (e.g. `translations/it.json`) using the existing files as a template, and add the language code to the `getTranslations()` method in `MMM-AnkerSolixMQTT.js`.
+
+
+---
+
+## Support
+
+If you find this module useful, consider buying me a coffee — it keeps the project going! ☕
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/utzl11)
+
