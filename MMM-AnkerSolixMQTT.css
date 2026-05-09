@@ -1,0 +1,71 @@
+.MMM-AnkerSolix {
+    font-family: sans-serif;
+    width: 340px;
+}
+
+.MMM-AnkerSolix .solix-header {
+    font-size: 11px;
+    font-weight: 500;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.MMM-AnkerSolix .solix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 6px;
+}
+
+.MMM-AnkerSolix .solix-card {
+    background: #111;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-sizing: border-box;
+}
+
+.MMM-AnkerSolix .solix-card.span2 {
+    grid-column: span 2;
+}
+
+.MMM-AnkerSolix .solix-card-label {
+    font-size: 10px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.MMM-AnkerSolix .solix-card-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.MMM-AnkerSolix .solix-card-value.yellow { color: #f5c400; }
+.MMM-AnkerSolix .solix-card-value.green  { color: #4cd964; }
+.MMM-AnkerSolix .solix-card-value.blue   { color: #5ac8fa; }
+.MMM-AnkerSolix .solix-card-value.red    { color: #ff3b30; }
+
+.MMM-AnkerSolix .solix-bat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.MMM-AnkerSolix .solix-bat-item {
+    font-size: 11px;
+    color: #777;
+    white-space: nowrap;
+}
+
+.MMM-AnkerSolix .solix-footer {
+    font-size: 10px;
+    color: #333;
+    text-align: right;
+    margin-top: 8px;
+}
