@@ -69,15 +69,10 @@ Module.register("MMM-AnkerSolixMQTT", {
         const grid = document.createElement("div");
         grid.className = "solix-grid";
 
-        // ── Zeile 1 ──────────────────────────────────────
-
-        // Solar
+        // ── Zeile 1 links: Solar ──────────────────────────
         const cardSolar = document.createElement("div");
         cardSolar.className = "solix-card";
-        cardSolar.innerHTML = `
-            <div class="solix-card-label">${this.translate("SOLAR")}</div>
-            <div class="solix-card-value yellow">${d.solar_power_w} W</div>
-        `;
+        cardSolar.style.cssText = "grid-column: 1 / 2; grid-row: 1 / 2;";
 
         // Batterie
         const cardBat = document.createElement("div");
@@ -94,28 +89,19 @@ Module.register("MMM-AnkerSolixMQTT", {
         // Hausverbrauch
         const cardHome = document.createElement("div");
         cardHome.className = "solix-card";
-        cardHome.innerHTML = `
-            <div class="solix-card-label">${this.translate("HOME_LOAD")}</div>
-            <div class="solix-card-value">${d.home_load_w} W</div>
-        `;
+        cardHome.style.cssText = "grid-column: 3 / 4; grid-row: 1 / 2;";
 
         // ── Zeile 2 ──────────────────────────────────────
 
         // Einspeisung ins Haus (span 2)
         const cardEinspeisung = document.createElement("div");
         cardEinspeisung.className = "solix-card span2";
-        cardEinspeisung.innerHTML = `
-            <div class="solix-card-label">${this.translate("FEED_IN")}</div>
-            <div class="solix-card-value green">${d.einspeisung_w} W</div>
-        `;
+        cardEinspeisung.style.cssText = "grid-column: 1 / 2; grid-row: 2 / 3;";
 
         // Netz
         const cardGrid = document.createElement("div");
         cardGrid.className = "solix-card";
-        cardGrid.innerHTML = `
-            <div class="solix-card-label">${this.translate("GRID")}${gridLabel ? " · " + gridLabel : ""}</div>
-            <div class="solix-card-value ${gridColor}">${gridSign}${gridAbs} W</div>
-        `;
+        cardGrid.style.cssText = "grid-column: 3 / 4; grid-row: 2 / 3;";
 
         grid.appendChild(cardSolar);
         grid.appendChild(cardBat);
