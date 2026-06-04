@@ -135,12 +135,20 @@ python export_system.py
 
 Select all services (`a`), skip MQTT export for now. Check the exported JSON files to verify your device serial numbers.
 
-### Step 6 — Copy the poller script
-
-Copy `solix_mqtt_poller.py` from this repository into the `anker-solix-api` directory:
+### Step 6 — Clone the MagicMirror module
 
 ```bash
-cp solix_mqtt_poller.py ~/anker-solix-api/solix_mqtt_poller.py
+cd ~/MagicMirror/modules
+git clone https://github.com/utzl/MMM-AnkerSolixMQTT.git
+```
+
+### Step 7 — Copy the poller script
+
+Copy `solix_mqtt_poller.py` from the cloned module into the `anker-solix-api` directory:
+
+```bash
+cp ~/MagicMirror/modules/MMM-AnkerSolixMQTT/solix_mqtt_poller.py \
+   ~/anker-solix-api/solix_mqtt_poller.py
 ```
 
 Edit the serial numbers at the top of the script to match your devices:
@@ -152,7 +160,7 @@ SN_SMARTMETER = "YOUR_SMARTMETER_SERIAL"
 
 > You can find your serial numbers in the exported JSON files from Step 5, or in the Anker app under device settings.
 
-### Step 7 — Test the poller
+### Step 8 — Test the poller
 
 ```bash
 cd ~/anker-solix-api
@@ -171,7 +179,7 @@ You should see real-time output like:
 [08:25:07] Solar: 1740W | Bat↑: 542W ↓: 0W 99% | Einspeisung: 1198W | Haus: 1809W | Netz: 614W
 ```
 
-### Step 8 — Install as a systemd service
+### Step 9 — Install as a systemd service
 
 ```bash
 sudo nano /etc/systemd/system/solix-mqtt-poller.service
@@ -200,12 +208,6 @@ sudo systemctl daemon-reload
 sudo systemctl enable solix-mqtt-poller
 sudo systemctl start solix-mqtt-poller
 sudo systemctl status solix-mqtt-poller
-```
-
-### Step 9 — Install the MagicMirror module
-
-```bash
-cp -r MMM-AnkerSolixMQTT ~/MagicMirror/modules/
 ```
 
 ### Step 10 — Add to MagicMirror config
@@ -322,7 +324,6 @@ The following languages are included:
 
 Translation files are located in the `translations/` folder. To add a new language, create a new file (e.g. `translations/it.json`) using the existing files as a template, and add the language code to the `getTranslations()` method in `MMM-AnkerSolixMQTT.js`.
 
-
 ---
 
 ## Support
@@ -330,4 +331,3 @@ Translation files are located in the `translations/` folder. To add a new langua
 If you find this module useful, consider buying me a coffee — it keeps the project going! ☕
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/utzl11)
-
