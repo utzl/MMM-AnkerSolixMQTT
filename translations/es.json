@@ -2,7 +2,7 @@
   "SOLAR":         "Solar",
   "BATTERY":       "Batería",
   "HOME_LOAD":     "Consumo hogar",
-  "FEED_IN":       "Suministro hogar",
+  "FEED_IN": "Suministro",
   "GRID":          "Red",
   "GRID_IMPORT":   "Importación",
   "GRID_EXPORT":   "Exportación",

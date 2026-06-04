@@ -2,7 +2,7 @@
   "SOLAR":         "Solar",
   "BATTERY":       "Batterie",
   "HOME_LOAD":     "Hausverbrauch",
-  "FEED_IN":       "Einspeisung ins Haus",
+  "FEED_IN": "Einspeisung",
   "GRID":          "Netz",
   "GRID_IMPORT":   "Bezug",
   "GRID_EXPORT":   "Einspeisung",

@@ -2,7 +2,7 @@
   "SOLAR":         "Zonne-energie",
   "BATTERY":       "Batterij",
   "HOME_LOAD":     "Thuisverbruik",
-  "FEED_IN":       "Levering huis",
+  "FEED_IN": "Levering",
   "GRID":          "Net",
   "GRID_IMPORT":   "Afname",
   "GRID_EXPORT":   "Teruglevering",

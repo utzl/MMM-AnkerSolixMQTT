@@ -2,7 +2,7 @@
   "SOLAR":         "Solaire",
   "BATTERY":       "Batterie",
   "HOME_LOAD":     "Consommation",
-  "FEED_IN":       "Injection maison",
+  "FEED_IN": "Injection",
   "GRID":          "Réseau",
   "GRID_IMPORT":   "Soutirage",
   "GRID_EXPORT":   "Injection",
