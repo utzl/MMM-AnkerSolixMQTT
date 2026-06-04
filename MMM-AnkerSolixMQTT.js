@@ -44,21 +44,24 @@ Module.register("MMM-AnkerSolixMQTT", {
         wrapper.className = "MMM-AnkerSolix";
 
         if (!this.solixData) {
-            wrapper.innerHTML = `<div class="solix-card-label">${this.translate("LOADING")}</div>`;
+            wrapper.innerHTML = `<div class='solix-header'>${this.translate("LOADING")}</div>`;
             return wrapper;
         }
 
         if (this.solixData.error) {
-            wrapper.innerHTML = `<div class="solix-card-label">⚠ ${this.translate("ERROR")}: ${this.solixData.error}</div>`;
+            wrapper.innerHTML = `<div class='solix-header'>⚠ ${this.translate("ERROR")}: ${this.solixData.error}</div>`;
             return wrapper;
         }
 
         const d = this.solixData;
 
-        // Netz: positiv = Bezug (rot), negativ = Einspeisung (grün), 0 = neutral
+        // Netz: positiv = Bezug (rot), negativ = Einspeisung (grün)
         const gridAbs   = Math.abs(d.grid_power_w);
         const gridColor = d.grid_power_w > 0 ? "red" : (d.grid_power_w < 0 ? "green" : "");
         const gridSign  = d.grid_power_w > 0 ? "+" : (d.grid_power_w < 0 ? "−" : "");
+        const gridLabel = d.grid_power_w > 0
+            ? this.translate("GRID_IMPORT")
+            : (d.grid_power_w < 0 ? this.translate("GRID_EXPORT") : "");
 
         // Batterieladung: 0–100%
         const batPct = Math.min(100, Math.max(0, d.battery_pct));
@@ -66,53 +69,51 @@ Module.register("MMM-AnkerSolixMQTT", {
         const grid = document.createElement("div");
         grid.className = "solix-grid";
 
-        // ── Zeile 1 links: Solar ──────────────────────────
+        // ── Zeile 1 ──────────────────────────────────────
+
+        // Solar
         const cardSolar = document.createElement("div");
         cardSolar.className = "solix-card";
-        cardSolar.style.gridColumn = "1";
-        cardSolar.style.gridRow = "1";
         cardSolar.innerHTML = `
             <div class="solix-card-label">${this.translate("SOLAR")}</div>
             <div class="solix-card-value yellow">${d.solar_power_w} W</div>
         `;
 
-        // ── Zeile 1+2 mitte: Batterie ─────────────────────
+        // Batterie
         const cardBat = document.createElement("div");
-        cardBat.className = "solix-card-bat";
+        cardBat.className = "solix-card";
         cardBat.innerHTML = `
             <div class="solix-card-label">${this.translate("BATTERY")}</div>
-            <div class="solix-bat-pct">${batPct} %</div>
-            <div class="solix-bat-item">${this.translate("BAT_CHARGE")} <span>${d.bat_charging_w} W</span></div>
-            <div class="solix-bat-item">${this.translate("BAT_DISCHARGE")} <span>${d.bat_discharging_w} W</span></div>
+            <div class="solix-card-value blue">${batPct} %</div>
+            <div class="solix-bat-row">
+                <div class="solix-bat-item">${this.translate("BAT_CHARGE")} ${d.bat_charging_w} W</div>
+                <div class="solix-bat-item">${this.translate("BAT_DISCHARGE")} ${d.bat_discharging_w} W</div>
+            </div>
         `;
 
-        // ── Zeile 1 rechts: Hausverbrauch ─────────────────
+        // Hausverbrauch
         const cardHome = document.createElement("div");
         cardHome.className = "solix-card";
-        cardHome.style.gridColumn = "3";
-        cardHome.style.gridRow = "1";
         cardHome.innerHTML = `
             <div class="solix-card-label">${this.translate("HOME_LOAD")}</div>
             <div class="solix-card-value">${d.home_load_w} W</div>
         `;
 
-        // ── Zeile 2 links: Einspeisung ────────────────────
+        // ── Zeile 2 ──────────────────────────────────────
+
+        // Einspeisung ins Haus (span 2)
         const cardEinspeisung = document.createElement("div");
-        cardEinspeisung.className = "solix-card";
-        cardEinspeisung.style.gridColumn = "1";
-        cardEinspeisung.style.gridRow = "2";
+        cardEinspeisung.className = "solix-card span2";
         cardEinspeisung.innerHTML = `
             <div class="solix-card-label">${this.translate("FEED_IN")}</div>
             <div class="solix-card-value green">${d.einspeisung_w} W</div>
         `;
 
-        // ── Zeile 2 rechts: Netz ──────────────────────────
+        // Netz
         const cardGrid = document.createElement("div");
         cardGrid.className = "solix-card";
-        cardGrid.style.gridColumn = "3";
-        cardGrid.style.gridRow = "2";
         cardGrid.innerHTML = `
-            <div class="solix-card-label">${this.translate("GRID")}</div>
+            <div class="solix-card-label">${this.translate("GRID")}${gridLabel ? " · " + gridLabel : ""}</div>
             <div class="solix-card-value ${gridColor}">${gridSign}${gridAbs} W</div>
         `;
 
